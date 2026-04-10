@@ -37,11 +37,47 @@ static ssize_t basic_read(struct file *file, char __user *user_buffer, size_t co
 
 static ssize_t basic_write(struct file *file, const char __user *user_buffer, size_t count, loff_t *offset){
     int bytes_to_copy;
-    bytes_to_copy=min(count,(size_t)BUF_SIZE);
+    int op1 = 0, op2 = 0, parsed;
+    char op = 0;
+    long result = 0;
+
+    bytes_to_copy=min(count,(size_t)(BUF_SIZE - 1));
     if(copy_from_user(kernel_buffer,user_buffer,bytes_to_copy))
-    return -EFAULT;
-    buffer_size= bytes_to_copy;
-    printk(KERN_INFO "basic_char: wrote %d bytes\n",bytes_to_copy);
+        return -EFAULT;
+    
+    kernel_buffer[bytes_to_copy] = '\0';
+    
+    parsed = sscanf(kernel_buffer, "%d %d %c", &op1, &op2, &op);
+    if (parsed != 3) {
+        parsed = sscanf(kernel_buffer, "%d %c %d", &op1, &op, &op2);
+    }
+
+    if (parsed == 3) {
+        switch(op) {
+            case '+': result = op1 + op2; break;
+            case '-': result = op1 - op2; break;
+            case '*': result = op1 * op2; break;
+            case '/': 
+                if (op2 != 0) {
+                    result = op1 / op2;
+                } else {
+                    printk(KERN_ERR "basic_char: Error - Division by zero\n");
+                    buffer_size = snprintf(kernel_buffer, BUF_SIZE, "Error: Division by zero\n");
+                    return bytes_to_copy;
+                }
+                break;
+            default:
+                printk(KERN_ERR "basic_char: Invalid operator '%c'\n", op);
+                buffer_size = snprintf(kernel_buffer, BUF_SIZE, "Error: Invalid operator '%c'\n", op);
+                return bytes_to_copy;
+        }
+        printk(KERN_INFO "basic_char: Calculation Result: %d %c %d = %ld\n", op1, op, op2, result);
+        buffer_size = snprintf(kernel_buffer, BUF_SIZE, "Result: %ld\n", result);
+    } else {
+        buffer_size = bytes_to_copy;
+        printk(KERN_INFO "basic_char: wrote %d bytes (No valid arithmetic expression)\n", bytes_to_copy);
+    }
+
     return bytes_to_copy;
 }
 
