@@ -1,0 +1,1 @@
+savedcmd_/home/dell/newclass/devicedriver/calculator/basic_file.mod := printf '%s\n'   basic_file.o | awk '!x[$$0]++ { print("/home/dell/newclass/devicedriver/calculator/"$$0) }' > /home/dell/newclass/devicedriver/calculator/basic_file.mod

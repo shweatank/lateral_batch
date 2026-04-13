@@ -1,0 +1,1 @@
+savedcmd_/home/dell/newclass/devicedriver/calculator/modules.order := {   echo /home/dell/newclass/devicedriver/calculator/basic_file.o; :; } > /home/dell/newclass/devicedriver/calculator/modules.order

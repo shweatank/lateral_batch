@@ -1,0 +1,1 @@
+savedcmd_/home/dell/newclass/devicedriver/calculator/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/dell/newclass/devicedriver/calculator/Module.symvers -T /home/dell/newclass/devicedriver/calculator/modules.order -i Module.symvers -e 

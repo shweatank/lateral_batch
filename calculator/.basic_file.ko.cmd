@@ -1,0 +1,1 @@
+savedcmd_/home/dell/newclass/devicedriver/calculator/basic_file.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/dell/newclass/devicedriver/calculator/basic_file.ko /home/dell/newclass/devicedriver/calculator/basic_file.o /home/dell/newclass/devicedriver/calculator/basic_file.mod.o
