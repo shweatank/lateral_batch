@@ -1,0 +1,1 @@
+savedcmd_/home/dell/newclass/devicedriver/ioctl_cal/ioctl_cal.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/dell/newclass/devicedriver/ioctl_cal/ioctl_cal.ko /home/dell/newclass/devicedriver/ioctl_cal/ioctl_cal.o /home/dell/newclass/devicedriver/ioctl_cal/ioctl_cal.mod.o
