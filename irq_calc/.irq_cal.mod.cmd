@@ -1,0 +1,1 @@
+savedcmd_/home/dell/newclass/interupt/keyboardscan/irq_cal.mod := printf '%s\n'   irq_cal.o | awk '!x[$$0]++ { print("/home/dell/newclass/interupt/keyboardscan/"$$0) }' > /home/dell/newclass/interupt/keyboardscan/irq_cal.mod

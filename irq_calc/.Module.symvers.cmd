@@ -1,0 +1,1 @@
+savedcmd_/home/dell/newclass/interupt/keyboardscan/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/dell/newclass/interupt/keyboardscan/Module.symvers -T /home/dell/newclass/interupt/keyboardscan/modules.order -i Module.symvers -e 

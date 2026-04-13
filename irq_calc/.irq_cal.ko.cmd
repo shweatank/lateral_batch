@@ -1,0 +1,1 @@
+savedcmd_/home/dell/newclass/interupt/keyboardscan/irq_cal.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/dell/newclass/interupt/keyboardscan/irq_cal.ko /home/dell/newclass/interupt/keyboardscan/irq_cal.o /home/dell/newclass/interupt/keyboardscan/irq_cal.mod.o
