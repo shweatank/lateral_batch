@@ -1,0 +1,1 @@
+savedcmd_/home/dell/newclass/interupt/timerinterput/timer.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/dell/newclass/interupt/timerinterput/timer.ko /home/dell/newclass/interupt/timerinterput/timer.o /home/dell/newclass/interupt/timerinterput/timer.mod.o

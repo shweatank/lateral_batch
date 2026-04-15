@@ -1,0 +1,1 @@
+savedcmd_/home/dell/newclass/interupt/timerinterput/timer.mod := printf '%s\n'   timer.o | awk '!x[$$0]++ { print("/home/dell/newclass/interupt/timerinterput/"$$0) }' > /home/dell/newclass/interupt/timerinterput/timer.mod

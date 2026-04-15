@@ -1,0 +1,1 @@
+savedcmd_/home/dell/newclass/interupt/timerinterput/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/dell/newclass/interupt/timerinterput/Module.symvers -T /home/dell/newclass/interupt/timerinterput/modules.order -i Module.symvers -e 
