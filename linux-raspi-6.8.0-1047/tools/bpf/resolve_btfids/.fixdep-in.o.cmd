@@ -1,0 +1,1 @@
+cmd_/home/dell/training/linux-raspi-6.8.0-1047/tools/bpf/resolve_btfids/fixdep-in.o :=  ld -r -o /home/dell/training/linux-raspi-6.8.0-1047/tools/bpf/resolve_btfids/fixdep-in.o  /home/dell/training/linux-raspi-6.8.0-1047/tools/bpf/resolve_btfids/fixdep.o
