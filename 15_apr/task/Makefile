@@ -1,8 +1,6 @@
-obj-m += task.o
-obj-m += timer.o
-obj-m += workq.o
-obj-m += waitq.o
-obj-m += alloc_mem.o
+obj-m += task1.o
+obj-m += task2.o
+obj-m += task3.o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules

@@ -30,7 +30,8 @@ static ssize_t my_read(struct file *file, char __user *buf, size_t len, loff_t *
     pr_info("Read: waiting....\n");
     wait_event_interruptible(wq, flag !=0);
     flag = 0;
-    copy_to_user(buf,msg,sizeof(msg));
+    if (copy_to_user(buf, msg, sizeof(msg)))
+        return -EFAULT;
     pr_info("Read: done\n");
     return sizeof(msg);
 }
@@ -44,6 +45,7 @@ static int __init my_init(void){
     pr_info("Driver loaded\n");
     init_waitqueue_head(&wq);
     major = register_chrdev(0,DEVICE_NAME, &fops);
+    pr_info("Major number allocated: %d\n", major);
     interval =ktime_set(1,0);
     hrtimer_init(&my_timer,CLOCK_MONOTONIC,HRTIMER_MODE_REL);
     my_timer.function = timer_callback;
