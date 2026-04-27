@@ -1,0 +1,36 @@
+/dts-v1/;
+/plugin/;
+
+ / {
+    compatible = "brcm,bcm2711";
+
+    /* Disable Bluetooth (it uses uart0) */
+    fragment@0 {
+        target = <&uart0>;
+        __overlay__ {
+            status = "okay";
+            compatible = "myproject,my-uart0";   
+        };
+    };
+
+    /* Pinmux: GPIO14 TX, GPIO15 RX */
+    fragment@1 {
+        target = <&gpio>;
+        __overlay__ {
+            myuart0_pins: myuart0_pins {
+                brcm,pins = <14 15>;
+                brcm,function = <4>;     
+                brcm,pull = <0 0>;
+            };
+        };
+    };
+
+    fragment@2 {
+        target = <&uart0>;
+        __overlay__ {
+            pinctrl-names = "default";
+            pinctrl-0 = <&myuart0_pins>;
+        };
+    };
+
+};
