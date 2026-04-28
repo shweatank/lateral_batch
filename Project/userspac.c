@@ -102,16 +102,15 @@ int main(void)
 		// Ignore duplicate commands
 		if (ch == last_cmd)
 			continue;
-
 		if (ch == '1') {
 			printf("UART='1' → Display image (%d)\n", ++count);
 			lcd_show_image(lcd_fd);
+			usleep(1000);
 		} 
 		else {
-			printf("UART='0' → Clear LCD (%d)\n", ++count);
+		printf("UART='0' → Clear LCD (%d)\n", ++count);
 			lcd_clear(lcd_fd);
 		}
-
 		last_cmd = ch;
 	}
 
