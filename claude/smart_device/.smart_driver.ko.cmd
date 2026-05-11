@@ -1,0 +1,1 @@
+savedcmd_/home/dell/calc_driver/smart_device/smart_driver.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/dell/calc_driver/smart_device/smart_driver.ko /home/dell/calc_driver/smart_device/smart_driver.o /home/dell/calc_driver/smart_device/smart_driver.mod.o

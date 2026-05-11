@@ -1,0 +1,1 @@
+savedcmd_/home/dell/calc_driver/smart_device/smart_driver.mod := printf '%s\n'   smart_driver.o | awk '!x[$$0]++ { print("/home/dell/calc_driver/smart_device/"$$0) }' > /home/dell/calc_driver/smart_device/smart_driver.mod
