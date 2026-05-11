@@ -1,0 +1,1 @@
+savedcmd_/tmp/smart_device_build/smart_driver.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /tmp/smart_device_build/smart_driver.ko /tmp/smart_device_build/smart_driver.o /tmp/smart_device_build/smart_driver.mod.o
